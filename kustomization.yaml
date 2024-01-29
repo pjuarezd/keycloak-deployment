@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: keycloak
+# https://www.keycloak.org/operator/advanced-configuration
+resources:
+  - namespace.yaml
+  - https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/23.0.4/kubernetes/keycloaks.k8s.keycloak.org-v1.yml
+  - https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/23.0.4/kubernetes/keycloakrealmimports.k8s.keycloak.org-v1.yml
+  - https://raw.githubusercontent.com/keycloak/keycloak-k8s-resources/23.0.4/kubernetes/kubernetes.yml
+  - postgres-user-secret.yaml
+  - keycloak-certificate-secret.yaml
+  - postgres-deployment.yaml
+  - postgres-service.yaml
+  - keycloak-crd.yaml
+
+# patchesStrategicMerge:
+#   - keycloak-nightly.yaml
