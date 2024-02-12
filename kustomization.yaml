@@ -12,6 +12,7 @@ resources:
   - postgres-deployment.yaml
   - postgres-service.yaml
   - keycloak-crd.yaml
+  - keycloak-admin-service.yaml
 
 # patchesStrategicMerge:
 #   - keycloak-nightly.yaml
